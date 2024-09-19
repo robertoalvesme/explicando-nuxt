@@ -1,12 +1,17 @@
 <script setup>
 
+const meuRoteador = useRouter()
+
 const email = ref()
 const password = ref()
+
 
 
 const validarFormularioEEnviar = () => {
 
   alert(`Olá ${email.value} você vai se logar!`)
+
+  meuRoteador.push('/escolher')
 
 }
 
@@ -40,51 +45,3 @@ const validarFormularioEEnviar = () => {
     </div>
   </div>
 </template>
-
-
-<style scoped>
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-form {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.login-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login-button:hover {
-  background-color: #0056b3;
-}
-</style>
